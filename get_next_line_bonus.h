@@ -6,7 +6,7 @@
 /*   By: gamorcil <gamorcil@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 19:24:51 by gamorcil          #+#    #+#             */
-/*   Updated: 2025/11/22 19:25:45 by gamorcil         ###   ########.fr       */
+/*   Updated: 2025/11/22 19:37:04 by gamorcil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ char	*ft_strdup(const char	*s);
 char	*ft_substr(char	const *s, unsigned int start, size_t	len);
 
 #endif
-

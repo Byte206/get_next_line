@@ -65,30 +65,30 @@ char	*fill_line_buffer(int fd, char	*left_str, char	*buffer)
 	return (left_str);
 }
 
-char    *get_next_line(int fd)
+char  *get_next_line(int fd)
 {
-    static char *left_string[1024];
-    char        *line;
-    char        *buffer;
-    
-    if (fd < 0 || BUFFER_SIZE <= 0 || fd >= 1024)  // Añade límite superior
-        return (NULL);
-    buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-    if (!buffer)
-        return (NULL);
-    line = fill_line_buffer(fd, left_string[fd], buffer);
-    free(buffer);
-    if (!line)
-    {
-        free(left_string[fd]);  // Libera la memoria antes
-        left_string[fd] = NULL;
-        return (NULL);
-    }
-    left_string[fd] = set_line(line);
-    return (line);
-}
-#include <stdio.h>
+	static char	*left_string[1024];
+	char		*line;
+	char		*buffer;
 
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= 1024)
+		return (NULL);
+	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (NULL);
+	line = fill_line_buffer(fd, left_string[fd], buffer);
+	free(buffer);
+	if (!line)
+	{
+		free(left_string[fd]);
+		left_string[fd] = NULL;
+		return (NULL);
+	}
+	left_string[fd] = set_line(line);
+	return (line);
+}
+/*
+#include <stdio.h>
 int main()
 {
 	int fd1 = open("file1.txt", O_RDONLY);
@@ -117,4 +117,4 @@ int main()
 	close(fd1);
 	close(fd2);
 	return 0;
-}
+} */
